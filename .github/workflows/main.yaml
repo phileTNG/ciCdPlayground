@@ -1,0 +1,18 @@
+name: Test Action
+run-name: ${{github.actor}} is testing...
+on: [workflow_dispatch]
+jobs:
+  Run-Yarn:
+    run-on: ubuntu-latest
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+        run: echo "The ${{ github.repository }} has been cloned to the runner."
+      - name: Build install
+        run: yarn
+      - name: Build
+        run: yarn build
+      - name: Run Tests
+        run: yarn test
+      - name: Run e2e tests
+        run: yarn test:e2e
