@@ -3,7 +3,7 @@ run-name: ${{github.actor}} is testing...
 on: [workflow_dispatch]
 jobs:
   Run-Yarn:
-    run-on: ubuntu-latest
+    runs-on: ubuntu-latest
     steps:
       - name: Checkout repo
         uses: actions/checkout@v4
