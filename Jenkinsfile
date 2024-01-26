@@ -13,7 +13,8 @@ pipeline {
                 git 'https://github.com/phileTNG/ciCdPlayground'
 
                 // Run Maven on a Unix agent.
-                sh 'yarn'
+                sh 'yarn install'
+                sh 'yarn build'
                 sh 'yarn test'
 
                 // To run Maven on a Windows agent, use
