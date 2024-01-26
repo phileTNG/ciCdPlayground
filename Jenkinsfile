@@ -14,7 +14,7 @@ pipeline {
 
                 // Run Maven on a Unix agent.
                 sh 'yarn install'
-                sh 'yarn build'
+//                 sh 'yarn build'
                 sh 'yarn test'
 
             }
@@ -23,7 +23,7 @@ pipeline {
                 // If Maven was able to run the tests, even if some of the test
                 // failed, record the test results and archive the jar file.
                 success {
-                    junit '*/reports/**/*.xml'
+                    junit '**/reports/**/*.xml'
                 }
             }
         }
