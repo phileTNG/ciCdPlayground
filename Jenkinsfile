@@ -10,6 +10,7 @@ pipeline {
             steps {
                 // Get some code from a GitHub repository
                 git 'https://github.com/phileTNG/ciCdPlayground'
+                git branch: 'main', url: 'https://github.com/phileTNG/ciCdPlayground'
 
                 // Run Maven on a Unix agent.
                 sh 'yarn install'
